@@ -5,6 +5,7 @@ const angular = require("angular-eslint");
 const typescriptParser = require("@typescript-eslint/parser");
 const eslintConfigPrettier = require("eslint-config-prettier");
 const importPlugin = require('eslint-plugin-import');
+const ngrx = require('@ngrx/eslint-plugin/v9');
 
 module.exports = tseslint.config(
   {
@@ -14,6 +15,7 @@ module.exports = tseslint.config(
       ...tseslint.configs.strictTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       ...angular.configs.tsAll,
+      ...ngrx.configs.all,
       eslintConfigPrettier,
     ],
     plugins: {
